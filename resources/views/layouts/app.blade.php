@@ -37,16 +37,16 @@
                     <ul class="navbar-nav mr-auto">
 						<!--Nav Bar Hooks - Do not delete!!-->
 						<li class="nav-item">
-                            <a href="{{ url('adm/apicams') }}" class="nav-link"><i class="fab fa- text-info"></i> 🍬Apicams</a> 
+                            <a href="{{ route('apichatur') }}" class="nav-link"><i class="fab fa- text-info"></i> 🍬Apicams</a> 
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('adm/pagemasters') }}" class="nav-link"><i class="fab fa-web text-info"></i> Master</a> 
+                            <a href="{{ route('master') }}" class="nav-link"><i class="fab fa-web text-info"></i> Master</a> 
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('adm/empresas') }}" class="nav-link"><i class="fab fa-user text-info"></i> Empresas</a> 
+                            <a href="{{ route('business') }}" class="nav-link"><i class="fab fa-user text-info"></i> Empresas</a> 
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('adm/dolars') }}" class="nav-link"><i class="fab fa- text-info"></i> Dolars</a> 
+                            <a href="{{ route('dolars') }}" class="nav-link"><i class="fab fa- text-info"></i> Dolars</a> 
                         </li>
                     </ul>
                     

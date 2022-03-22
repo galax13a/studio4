@@ -30,25 +30,23 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route Hooks - Do not delete//
-	Route::view('adm/contablestudios', 'livewire.contablestudios.index')->middleware('auth');
-	Route::view('adm/contables', 'livewire.contables.index')->middleware('auth');
-	Route::view('adm/paymediosdetails', 'livewire.paymediosdetails.index')->middleware('auth');
-	Route::view('adm/paymedios', 'livewire.paymedios.index')->middleware('auth');
-	Route::view('adm/monetizadores', 'livewire.monetizadores.index')->middleware('auth');
-	Route::view('adm/statstudios', 'livewire.statstudios.index')->middleware('auth');
-	Route::view('adm/apicams', 'livewire.chaturdatas.index')->middleware('auth');
-	Route::view('adm/chaturstatstudios', 'livewire.chaturstatstudios.index')->middleware('auth');
-	Route::view('adm/prizesdetails', 'livewire.prizesdetails.index')->middleware('auth');
-	Route::view('adm/prizes', 'livewire.prizes.index')->middleware('auth');
-	Route::view('adm/monedas', 'livewire.monedas.index')->middleware('auth');
-	Route::view('adm/paypages', 'livewire.paypages.index')->middleware('auth');
-	Route::view('adm/pagemodels', 'livewire.pagemodels.index')->middleware('auth');
-	Route::view('adm/conexions', 'livewire.conexions.index')->middleware('auth');
-	Route::view('adm/pagemasters', 'livewire.pagemasters.index')->middleware('auth');
-	Route::view('adm/empresas', 'livewire.empresas.index')->middleware('auth');
-
-	Route::view('adm/estudios', 'livewire.estudios.index')->middleware('auth');
-	Route::view('adm/modelos', 'livewire.modelos.index')->middleware('auth');
-
-	Route::view('adm/pages', 'livewire.pages.index')->middleware('auth');
-    Route::view('adm/dolars', 'livewire.dolars.index')->middleware('auth');
+	Route::view('adm/contable-studios', 'livewire.contablestudios.index')->middleware('auth')->name('contablestudios');
+	Route::view('adm/contables', 'livewire.contables.index')->middleware('auth')->name('contables');
+	Route::view('adm/paymedios-details-models', 'livewire.paymediosdetails.index')->middleware('auth')->name('paymediosdetails');
+	Route::view('adm/pay-medios', 'livewire.paymedios.index')->middleware('auth')->name('paymedios');
+	Route::view('adm/money-local', 'livewire.monetizadores.index')->middleware('auth')->name('money-local');
+	Route::view('adm/pay-page-studio', 'livewire.statstudios.index')->middleware('auth')->name('pay-page-studio');
+	Route::view('adm/api-chaturbate', 'livewire.chaturdatas.index')->middleware('auth')->name('apichatur');
+	Route::view('adm/chaturbate-stats-tudios', 'livewire.chaturstatstudios.index')->middleware('auth')->name('chaturstatstudios');
+	Route::view('adm/prizes-details-models', 'livewire.prizesdetails.index')->middleware('auth')->name('prizesdetails');
+	Route::view('adm/prizes-models', 'livewire.prizes.index')->middleware('auth')->name('prizes');
+	Route::view('adm/currency', 'livewire.monedas.index')->middleware('auth')->name('monedas');
+	Route::view('adm/pay-pages-models', 'livewire.paypages.index')->middleware('auth')->name('pay-pages-models');
+	Route::view('adm/pages-models', 'livewire.pagemodels.index')->middleware('auth')->name('pagemodels');
+	Route::view('adm/models-conexions', 'livewire.conexions.index')->middleware('auth')->name('cnxmodels');
+	Route::view('adm/masters', 'livewire.pagemasters.index')->middleware('auth')->name('master');
+	Route::view('adm/business', 'livewire.empresas.index')->middleware('auth')->name('business');
+	Route::view('adm/studios', 'livewire.estudios.index')->middleware('auth')->name('estudios');
+	Route::view('adm/studio-models', 'livewire.modelos.index')->middleware('auth')->name('modelos');
+	Route::view('adm/cams-pages', 'livewire.pages.index')->middleware('auth')->name('pages-cams');
+    Route::view('adm/dolars-colombia', 'livewire.dolars.index')->middleware('auth')->name('dolars');

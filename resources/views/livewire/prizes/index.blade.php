@@ -1,13 +1,14 @@
-@extends('layouts.app')
-
 
 @section('content')
+@extends('layouts.app')
 
+<x-Menuadmin.empresa></x-Menuadmin.empresa>
+<x-menuxnav>
+  <x-slot name="menu">
+    <a href="{{ route('prizesdetails') }}" class="nav-link"><i class="fab fa- text-info"></i> 🔥 Winner Prizes</a> 
+    </x-slot>
+</x-menuxnav>
 
-  <nav style="margin-top:-10px;"  class="navbar navbar-expand-lg navbar-light bg-light mb-2">
-    <div class="container">
-        <a href="{{ url('adm/prizesdetails') }}" class="nav-link"><i class="fab fa- text-info"></i> 🔥 Winner Prizes</a> 
-  </nav>
 <div class="container">
  
     <div class="row justify-content-center">
