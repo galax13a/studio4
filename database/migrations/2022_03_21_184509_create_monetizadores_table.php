@@ -17,11 +17,12 @@ return new class extends Migration
             $table->integerIncrements("id");   
             $table->string('name')->index();
             $table->string('pagina')->nullable();
+            $table->string('nit')->nullable();
+            $table->string('datax')->nullable();
             $table->string('contact')->nullable();
             $table->string('email')->nullable();
             $table->float('porce')->default(5);
             $table->boolean('status')->nullable()->default(false);
-            $table->string('datax')->nullable(); 
             $table->timestamps();
         });
     }

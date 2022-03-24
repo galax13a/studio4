@@ -13,6 +13,18 @@ class Invoicepaystudios extends Component
 	protected $paginationTheme = 'bootstrap';
     public $selected_id, $keyWord, $name, $date, $payout, $dolar_value, $dolar_oficial, $dolar_pagado, $iva, $status, $img_studio, $img_payment, $datax, $studio_id, $contable_id, $moneda_id, $monetizador_id, $paystudio_id;
     public $updateMode = false;
+	public $pdfbtn = false;
+	
+	public $id_invoices;
+		
+	public function mount($id_invoices= null) {
+		$this->id_invoices = $id_invoices;
+		$this->pdfbtn = true;
+	}
+
+	public function pdf($id=null) {
+		$this->pdfbtn = "entro expor archivo";
+	}
 
     public function render()
     {
@@ -44,7 +56,8 @@ class Invoicepaystudios extends Component
         $this->resetInput();
         $this->updateMode = false;
     }
-	
+
+
     private function resetInput()
     {		
 		$this->name = null;

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('monedas', function (Blueprint $table) {
             $table->integerIncrements("id");
             $table->string("name");
+            $table->string("code");
             $table->boolean("status")->default(0);
             $table->timestamps();
         });

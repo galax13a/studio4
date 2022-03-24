@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements("id");
             $table->string('name')->index();
             $table->string('nit')->nullable();
+            $table->string('nfactory')->nullable();
             $table->string('dir')->nullable();
             $table->string('tel')->nullable();
             $table->string('logo')->nullable();

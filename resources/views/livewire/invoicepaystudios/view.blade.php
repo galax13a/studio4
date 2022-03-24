@@ -13,8 +13,19 @@
 				<div class="card-body">
 						@include('livewire.invoicepaystudios.create')
 						@include('livewire.invoicepaystudios.update')
-				<div class="table-responsive ">
-					<table class="table table table-sm">
+
+						@if ($this->pdfbtn )
+						<button  onclick="print()" class="btn btn-primary text-sm-right"type="button"><i wire.click="pdf" class="fa-solid fa-file-pdf mr-2 "></i>Print PDF</button>
+	
+						<div id="pdfexport1">
+						@include('livewire.invoicepaystudios.pdf')
+						</div>
+					
+					</div>
+					@endif
+
+				<div class="table-responsive " id="export3" name="export3">
+					<table class="table table table-sm" >
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
@@ -22,8 +33,8 @@
 								<th>Date</th>
 								<th>Payout</th>
 								<th>Dolar</th>
-								<th>Dolar Ope</th>
-								<th>Dolar Pay</th>
+								<th>Dolar.O</th>
+								<th>Dolar.P</th>
 								<th>Iva</th>
 								<th>Pdf/Img</th>
 								<th>Studio</th>
@@ -31,7 +42,7 @@
 								<th>Moneda</th>
 								<th>Monetizador</th>
 								<th>Paystudio</th>
-								<td>ACTIONS</td>
+								<td>cmd</td>
 							</tr>
 						</thead>
 						<tbody>
@@ -49,21 +60,19 @@
 								<td>
 									<x-btnicon >
 										<x-slot name="icon" >
-											<div class="btn-group  btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-warning active">
-												  <input type="radio" name="options" id="option1" autocomplete="off" checked> 
-												  <i class="fa-solid fa-file-pdf "></i>
-												</label>
-												<label class="btn btn-dark">
-												  <input type="radio" name="options" id="option2" autocomplete="off"> 
-												  <i class="fa-solid fa-file-circle-plus "></i>
-
-												</label>
-												<label class="btn btn-dark">
-												  <input type="radio" name="options" id="option3" autocomplete="off"> 
-												  <i class="fa-solid fa-image"></i>
-												</label>
-											  </div>
+											<label wire:click.prevent="pdf(5)" class="btn btn-dark active">
+											<input  type="radio" name="options" id="option1" autocomplete="off" checked> 
+											<i wire.click="pdf" class="fa-solid fa-file-pdf mr-2 "></i>
+										</label>
+										<label class="btn btn-dark active">
+											<input type="radio" name="options" id="option2" autocomplete="off" checked> 
+											<i class="fa-solid fa-file-circle-plus mr-1 "></i>
+										</label>
+										<label class="btn btn-dark active">
+											<input type="radio" name="options" id="option3" autocomplete="off" checked> 
+											<i class="fa-solid fa-image"></i>
+										</label>
+											
 										</x-slot>
 									</x-btnicon>
 									
@@ -89,3 +98,16 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+	function print(){
+	var ficha = document.getElementById("pdfexport1");
+	  var ventimp = window.open(' ', 'popimpr');
+	  ventimp.document.write( ficha.innerHTML );
+	  ventimp.document.close();
+	  ventimp.print( );
+	  ventimp.close();
+	}
+
+</script>
