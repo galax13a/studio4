@@ -18,9 +18,11 @@ return new class extends Migration
             $table->string('name')->index();
             $table->boolean('status')->nullable()->defaultValue(true); //eliminacion 
             $table->unsignedBigInteger('studio_id')->nullable();
-            $table->foreign('studio_id')->references('id')->on('estudios');
+            $table->foreign('studio_id')->references('id')->on('estudios')->nullable();
             $table->unsignedBigInteger('model_id')->nullable();;
             $table->foreign('model_id')->references('id')->on('modelos');
+            $table->unsignedInteger('paymedio_id')->nullable();;
+            $table->foreign('paymedio_id')->references('id')->on('paymedios');
             $table->timestamps();
         });
     }

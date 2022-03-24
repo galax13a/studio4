@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Paymedio;
+use App\Models\Moneda;
+use App\Models\Estudio;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -13,11 +15,11 @@ class PaymedioFactory extends Factory
     public function definition()
     {
         return [
-			'name' => $this->faker->name,
-			'datax' => $this->faker->name,
-			'studio_id' => $this->faker->name,
-			'moneda_id' => $this->faker->name,
-			'status' => $this->faker->name,
+			'name' => $this->faker->randomElement(["Bancolombia","Davivienda","NEqui","daviplata","masterpagos","BAnco de bogota","serviplata","BitoColombia"]),
+			'datax' => null,
+			'studio_id' => Estudio::all()->random()->id,
+			'moneda_id' => Moneda::all()->random()->id,
+			'status' => 1,
         ];
     }
 }

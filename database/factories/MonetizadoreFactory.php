@@ -13,7 +13,7 @@ class MonetizadoreFactory extends Factory
     public function definition()
     {
         return [
-			'name' => $this->faker->name,
+			'name' => $this->faker->randomElement(["G7","OkiCenter","The WebcamLab","Bantokens","MiniPagos","JuiceService"]),
 			'pagina' => "none.com",
 			'contact' => $this->faker->name,
 			'email' => $this->faker->email(),

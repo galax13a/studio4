@@ -11,7 +11,7 @@ class Statstudio extends Model
 	
     public $timestamps = true;
 
-    protected $table = 'statstudios';
+    protected $table = 'paystudios';
 
     protected $fillable = ['date','date_ini','date_finish','payout','status','program','studio_id','page_id'];
 	

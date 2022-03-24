@@ -27,6 +27,10 @@
                 <label for="model_id"></label>
                 <input wire:model="model_id" type="text" class="form-control" id="model_id" placeholder="Model Id">@error('model_id') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
+            <div class="form-group">
+                <label for="paymedio_id"></label>
+                <input wire:model="paymedio_id" type="text" class="form-control" id="paymedio_id" placeholder="Paymedio Id">@error('paymedio_id') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
 
                 </form>
             </div>

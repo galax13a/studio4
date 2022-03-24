@@ -18,6 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+      <!-- Styles -->
+      <link href="{{ asset('css/adds.css') }}" rel="stylesheet">
+    <link href="{{ asset('icons/fontawesome-free-6.1.1-web/css/all.min.css') }}" rel="stylesheet">
+
+
 	 @livewireStyles
 </head>
 <body>
@@ -38,6 +43,9 @@
 						<!--Nav Bar Hooks - Do not delete!!-->
 						<li class="nav-item">
                             <a href="{{ route('apichatur') }}" class="nav-link"><i class="fab fa- text-info"></i> 🍬Apicams</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('invoicepaystudios') }}" class="nav-link"><i class="fab fa- text-info"></i> 📑Invoice</a> 
                         </li>
 						<li class="nav-item">
                             <a href="{{ route('master') }}" class="nav-link"><i class="fab fa-web text-info"></i> Master</a> 

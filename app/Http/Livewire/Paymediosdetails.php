@@ -11,7 +11,7 @@ class Paymediosdetails extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $name, $status, $studio_id, $model_id;
+    public $selected_id, $keyWord, $name, $status, $studio_id, $model_id, $paymedio_id;
     public $updateMode = false;
 
     public function render()
@@ -23,6 +23,7 @@ class Paymediosdetails extends Component
 						->orWhere('status', 'LIKE', $keyWord)
 						->orWhere('studio_id', 'LIKE', $keyWord)
 						->orWhere('model_id', 'LIKE', $keyWord)
+						->orWhere('paymedio_id', 'LIKE', $keyWord)
 						->paginate(10),
         ]);
     }
@@ -39,6 +40,7 @@ class Paymediosdetails extends Component
 		$this->status = null;
 		$this->studio_id = null;
 		$this->model_id = null;
+		$this->paymedio_id = null;
     }
 
     public function store()
@@ -51,7 +53,8 @@ class Paymediosdetails extends Component
 			'name' => $this-> name,
 			'status' => $this-> status,
 			'studio_id' => $this-> studio_id,
-			'model_id' => $this-> model_id
+			'model_id' => $this-> model_id,
+			'paymedio_id' => $this-> paymedio_id
         ]);
         
         $this->resetInput();
@@ -68,6 +71,7 @@ class Paymediosdetails extends Component
 		$this->status = $record-> status;
 		$this->studio_id = $record-> studio_id;
 		$this->model_id = $record-> model_id;
+		$this->paymedio_id = $record-> paymedio_id;
 		
         $this->updateMode = true;
     }
@@ -84,7 +88,8 @@ class Paymediosdetails extends Component
 			'name' => $this-> name,
 			'status' => $this-> status,
 			'studio_id' => $this-> studio_id,
-			'model_id' => $this-> model_id
+			'model_id' => $this-> model_id,
+			'paymedio_id' => $this-> paymedio_id
             ]);
 
             $this->resetInput();
