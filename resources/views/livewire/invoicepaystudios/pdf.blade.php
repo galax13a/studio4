@@ -2,16 +2,16 @@
 <div class="invoice-box">
     <table cellpadding="0" cellspacing="0">
         <tr class="top">
-            <td colspan="2">
+            <td colspan="3">
                 <table>
-                    <tr>
+                    <tr style="float: right;">
                         <td class="title">
                            <h6>Factura/TeamBrodcast</h6>
                         </td>
                         <td>
                            <b class="btn btn-success"> Factura #: 123 </b> <br />
                            <h6> Nit #: 17845523 </h6> <br />
-                            Cobrado: {{Date("Y-m-d H:i:s")}}<br />
+                            Creado: {{Date("Y-m-d H:i:s")}}<br />
                             Generado : February 1, 2015 <br>
                             #Num Dian : 4522452-75215
                         </td>
@@ -21,11 +21,11 @@
         </tr>
 
         <tr class="information">
-            <td colspan="2">
+            <td colspan="3">
                 <table>
                     <tr>
                         <td>
-                            <h4>Monetizador</h4>
+                            <h4>Monetizador/Cobrar a</h4>
                             <b>G7 BUSINESS SOLUTIONS  CORP</b><br />
                             NIT.:  82-5457471<br />
                             info : www.none.com
@@ -55,44 +55,40 @@
         </tr>
 
         <tr class="heading">
-            <td>Valor Letras</td>
-            <td>Valor</td>
+            <td>Valor en Letras</td>
+            <td>Valor #</td>
             <td>Moneda</td>
         </tr>
 
         <tr class="details">
-            <td>Ciento Veinte y Seis Dolares</td>
+            <td>
+                <?php
+
+            
+                ?>
+            </td>
             <td>1.000</td>
             <td>126 usd</td>
         </tr>
 
         <tr class="heading">
             <td>Descripcion</td>
-            <td>Cantidad</td>
-            <td>Precio</td>
+            <td>Cant</td>
+            <td>Precio/Total</td>
         </tr>
 
         <tr class="item">
             <td>Website design</td>
-            <td>$300.00</td>
-            <td>$300.00</td>
+            <td>3</td>
+            <td>$300/ Total(900)</td>
         </tr>
         
-        <tr class="item">
-            <td>Hosting (3 months)</td>
-            <td>$75.00</td>
-            <td>$300.00</td>
-        </tr>
-
-        <tr class="item last">
-            <td>Domain name (1 year)</td>
-            <td>$10.00</td>
-            <td>$300.00</td>
-        </tr>
+    
         
         <tr class="total">
             <td></td>
-            <td>Total: $385.00</td>
+            <td>
+                <br> <b class="btn btn-primary"> Total Factura: $900 </b> </td>
         </tr>
     </table>
 </div>
@@ -102,12 +98,13 @@
         max-width: 800px;
         margin: auto;
         padding: 30px;
-        border: 1px solid #eee;
+        border: 1px solid rgb(26, 243, 243);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
         font-size: 16px;
         line-height: 24px;
         font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
         color: #555;
+       
     }
 
     .invoice-box table {
@@ -158,7 +155,8 @@
     }
 
     .invoice-box table tr.total td:nth-child(2) {
-        border-top: 2px solid #eee;
+      
+        border-top: 0px solid #eee;
         font-weight: bold;
     }
 

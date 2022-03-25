@@ -51,3 +51,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 	Route::view('adm/studio-models', 'livewire.modelos.index')->middleware('auth')->name('modelos');
 	Route::view('adm/cams-pages', 'livewire.pages.index')->middleware('auth')->name('pages-cams');
     Route::view('adm/dolars-colombia', 'livewire.dolars.index')->middleware('auth')->name('dolars');
+	Route::get('test', 'App\Http\Controllers\TestController@index');

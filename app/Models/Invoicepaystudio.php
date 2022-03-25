@@ -52,7 +52,7 @@ class Invoicepaystudio extends Model
      */
     public function paystudio()
     {
-        return $this->hasOne('App\Models\Paystudio', 'id', 'paystudio_id');
+        return $this->hasOne('App\Models\Statstudio', 'id', 'paystudio_id');
     }
     
 }

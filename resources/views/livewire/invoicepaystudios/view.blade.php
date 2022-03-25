@@ -49,7 +49,7 @@
 							@foreach($invoicepaystudios as $row)
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
-								<td>{{ $row->name }}</td>
+								<td>{{ $row->name }} / {{ $row->paystudio->program }}</td>
 								<td>{{ $row->date }}</td>
 								<td>{{ $row->payout }}</td>
 								<td>{{ $row->dolar_value }}</td>
@@ -78,11 +78,11 @@
 									
 								</i>
 								</td>
-								<td>{{ $row->estudio->name }}</td>
+								<td>{{ $row->estudio->name }} </td>
 								<td>{{ $row->contable->name }}</td>
 								<td>{{ $row->moneda->name }}</td>
-								<td>{{ $row->monetizadore->name }}</td>
-								<td>{{ $row->estudio->name }}</td>
+								<td>{{ $row->monetizadore->name}}/{{$row->monetizadore->contact }}</td>
+								<td>{{ $row->estudio->name }} / {{ $row->paystudio->date }}</td>
 								<td width="90">
 									<x-BtnActions>
 										<x-slot name="id_row">{{$row->id}}</x-slot>
