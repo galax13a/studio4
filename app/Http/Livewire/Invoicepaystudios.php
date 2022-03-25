@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Invoicepaystudio;
+use Luecano\NumeroALetras\NumeroALetras;
 
 class Invoicepaystudios extends Component
 {
@@ -14,20 +15,28 @@ class Invoicepaystudios extends Component
     public $selected_id, $keyWord, $name, $date, $payout, $dolar_value, $dolar_oficial, $dolar_pagado, $iva, $status, $img_studio, $img_payment, $datax, $studio_id, $contable_id, $moneda_id, $monetizador_id, $paystudio_id;
     public $updateMode = false;
 	public $pdfbtn = false;
+	public $formato_moneda;
 	
 	public $id_invoices;
 		
 	public function mount($id_invoices= null) {
+		//$this->formatter = new NumeroALetras();
 		$this->id_invoices = $id_invoices;
 		$this->pdfbtn = true;
 	}
 
-	public function pdf($id=null) {
+	public function pdf($row=null) {
+
 		$this->pdfbtn = "entro expor archivo";
+		dd($row);
 	}
 
     public function render()
     {
+		//$this->formato_moneda = new NumeroALetras();
+		$vary =  new NumeroALetras();
+		$this->formato_moneda = $vary->toMoney(2500.90, 2, 'DÓLARES', 'CENTAVOS');
+
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.invoicepaystudios.view', [
             'invoicepaystudios' => Invoicepaystudio::latest()

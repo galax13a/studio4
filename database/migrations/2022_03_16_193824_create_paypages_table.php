@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('paypages', function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->date("date")->nullable();
-            $table->double("value")->default(0);
+            $table->string("account")->default(0);
             $table->unsignedBigInteger('studio_id')->nullable();
             $table->foreign('studio_id')->references('id')->on('estudios');
             $table->unsignedBigInteger('model_id');

@@ -62,10 +62,11 @@
 
         <tr class="details">
             <td>
-                <?php
-
+                @php
             
-                ?>
+               
+                @endphp
+              {{$this->formato_moneda}}
             </td>
             <td>1.000</td>
             <td>126 usd</td>

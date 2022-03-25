@@ -60,9 +60,9 @@
 								<td>
 									<x-btnicon >
 										<x-slot name="icon" >
-											<label wire:click.prevent="pdf(5)" class="btn btn-dark active">
+											<label wire:click.prevent="pdf({{$row}})" class="btn btn-dark active">
 											<input  type="radio" name="options" id="option1" autocomplete="off" checked> 
-											<i wire.click="pdf" class="fa-solid fa-file-pdf mr-2 "></i>
+											<i  class="fa-solid fa-file-pdf mr-2 "></i>
 										</label>
 										<label class="btn btn-dark active">
 											<input type="radio" name="options" id="option2" autocomplete="off" checked> 
