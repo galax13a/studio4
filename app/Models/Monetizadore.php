@@ -13,6 +13,6 @@ class Monetizadore extends Model
 
     protected $table = 'monetizadores';
 
-    protected $fillable = ['name','pagina','contact','email','porce','status','datax'];
+    protected $fillable = ['nit','name','pagina','contact','email','porce','status','datax'];
 	
 }

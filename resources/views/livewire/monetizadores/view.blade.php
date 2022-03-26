@@ -19,13 +19,14 @@
 							<tr> 
 								<td>#</td> 
 								<th>Name</th>
-								<th>Pagina</th>
+								<th>Nit</th>
+								<th>Page</th>
 								<th>Contact</th>
 								<th>Email</th>
 								<th>Porce</th>
 								<th>Status</th>
 								<th>Datax</th>
-								<td>ACTIONS</td>
+								<td>data</td>
 							</tr>
 						</thead>
 						<tbody>
@@ -33,6 +34,7 @@
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
 								<td>{{ $row->name }}</td>
+								<td>{{ $row->nit }}</td>
 								<td>{{ $row->pagina }}</td>
 								<td>{{ $row->contact }}</td>
 								<td>{{ $row->email }}</td>

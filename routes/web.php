@@ -30,13 +30,14 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route Hooks - Do not delete//
+	Route::view('paystudios', 'livewire.paystudios.index')->middleware('auth');
 	Route::view('adm/invoicepaystudios', 'livewire.invoicepaystudios.index')->middleware('auth')->name('invoicepaystudios');
 	Route::view('adm/contable-studios', 'livewire.contablestudios.index')->middleware('auth')->name('contablestudios');
 	Route::view('adm/contables', 'livewire.contables.index')->middleware('auth')->name('contables');
 	Route::view('adm/paymedios-details-models', 'livewire.paymediosdetails.index')->middleware('auth')->name('paymediosdetails');
 	Route::view('adm/pay-medios', 'livewire.paymedios.index')->middleware('auth')->name('paymedios');
 	Route::view('adm/money-local', 'livewire.monetizadores.index')->middleware('auth')->name('money-local');
-	Route::view('adm/pay-page-studio', 'livewire.statstudios.index')->middleware('auth')->name('pay-page-studio');
+	Route::view('adm/pay-page-studio', 'livewire.paystudios.index')->middleware('auth')->name('pay-page-studio');
 	Route::view('adm/api-chaturbate', 'livewire.chaturdatas.index')->middleware('auth')->name('apichatur');
 	Route::view('adm/chaturbate-stats-tudios', 'livewire.chaturstatstudios.index')->middleware('auth')->name('chaturstatstudios');
 	Route::view('adm/prizes-details-models', 'livewire.prizesdetails.index')->middleware('auth')->name('prizesdetails');

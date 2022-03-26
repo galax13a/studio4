@@ -22,5 +22,10 @@ class Empresa extends Model
     {
         return $this->hasOne('App\Models\User', 'id', 'users_id');
     }
+
+    public function invoicepaystudio()
+    {
+      //  return $this->hasMany('App\Models\Invoicepaystudio', 'empresa_id', 'id');
+    }
     
 }

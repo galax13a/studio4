@@ -17,6 +17,7 @@ return new class extends Migration
 
             $table->bigIncrements("id");
             $table->string('name')->index();
+            $table->string("master_account",100)->default(0);
             $table->string('monedax')->nullable()->defaultValue('tokens');
             $table->float('value')->default(0.05);
             $table->string('link')->nullable();

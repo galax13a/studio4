@@ -15,6 +15,7 @@ class MonetizadoreFactory extends Factory
         return [
 			'name' => $this->faker->randomElement(["G7","OkiCenter","The WebcamLab","Bantokens","MiniPagos","JuiceService"]),
 			'pagina' => "none.com",
+			'nit' => $this->faker->randomNumber(),
 			'contact' => $this->faker->name,
 			'email' => $this->faker->email(),
 			'porce' => $this->faker->randomElement([5,3,4,2.5]),

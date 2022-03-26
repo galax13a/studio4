@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('contact')->nullable();
             $table->string('email')->nullable();
             $table->float('porce')->default(5);
+            $table->float('del_dolar')->default(100);
             $table->boolean('status')->nullable()->default(false);
             $table->timestamps();
         });

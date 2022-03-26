@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('name')->index();
             $table->string('nit')->nullable();
             $table->string('nfactory')->nullable();
+            $table->string('data1')->nullable();
+            $table->string('data2')->nullable();
+            $table->string('data3')->nullable();
             $table->string('dir')->nullable();
             $table->string('tel')->nullable();
             $table->string('logo')->nullable();

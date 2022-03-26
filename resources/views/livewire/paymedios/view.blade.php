@@ -28,11 +28,12 @@
 						</thead>
 						<tbody>
 							@foreach($paymedios as $row)
+						
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
 								<td>{{ $row->name }}</td>
 								<td>{{ $row->datax }}</td>
-								<td>{{ $row->estudio->name }}</td>
+								<td>..</td>
 								<td>{{ $row->moneda->name }}</td>
 								<td>{{ $row->status }}</td>
 								<td width="90">

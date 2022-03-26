@@ -30,5 +30,9 @@ class Paymedio extends Model
     {
         return $this->hasOne('App\Models\Moneda', 'id', 'moneda_id');
     }
+    public function medio()
+    {
+        return $this->hasOne('App\Models\Moneda', 'id', 'moneda_id');
+    }
     
 }

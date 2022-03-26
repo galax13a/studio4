@@ -17,7 +17,7 @@ class PaypageFactory extends Factory
     {
         return [
 			'date' => date('Y-m-d'),
-			'value' => $this->faker->randomNumber(),
+			'account' => $this->faker->randomNumber(),
             'studio_id' => Estudio::all()->random()->id,
 			'model_id' => Modelo::all()->random()->id,
 			'moneda_id' =>Moneda::all()->random()->id

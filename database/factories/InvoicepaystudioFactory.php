@@ -7,8 +7,8 @@ use App\Models\Estudio;
 use App\Models\Contable;
 use App\Models\Moneda;
 use App\Models\Monetizadore;
-use App\Models\Statstudio;
-
+use App\Models\Paystudio;
+use App\Models\Empresa;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -34,7 +34,8 @@ class InvoicepaystudioFactory extends Factory
 			'contable_id' => Contable::all()->random()->id,
 			'moneda_id' => Moneda::all()->random()->id,
  			'monetizador_id' => Monetizadore::all()->random()->id,
-			 'paystudio_id' => Statstudio::all()->random()->id
+			 'paystudio_id' => Paystudio::all()->random()->id,
+			 'empresa_id' => Empresa::all()->random()->id
         ];
     }
 }

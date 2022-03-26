@@ -17,7 +17,8 @@ class PaymedioFactory extends Factory
         return [
 			'name' => $this->faker->randomElement(["Bancolombia","Davivienda","NEqui","daviplata","masterpagos","BAnco de bogota","serviplata","BitoColombia"]),
 			'datax' => null,
-			'studio_id' => Estudio::all()->random()->id,
+            'data1' => null,
+            'data2' => null,
 			'moneda_id' => Moneda::all()->random()->id,
 			'status' => 1,
         ];

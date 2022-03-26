@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Statstudio extends Model
+class Paystudio extends Model
 {
 	use HasFactory;
 	
@@ -13,7 +13,7 @@ class Statstudio extends Model
 
     protected $table = 'paystudios';
 
-    protected $fillable = ['date','date_ini','date_finish','payout','status','program','studio_id','page_id'];
+    protected $fillable = ['date','num','data1','data2','date_ini','date_finish','payout','status','program','studio_id','page_id','medio_id'];
 	
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -24,11 +24,27 @@ class Statstudio extends Model
     }
     
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function invoicepaystudios()
+    {
+        return $this->hasMany('App\Models\Invoicepaystudio', 'paystudio_id', 'id');
+    }
+    
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function page()
     {
         return $this->hasOne('App\Models\Page', 'id', 'page_id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function paymediosdetail()
+    {
+        return $this->hasOne('App\Models\Paymediosdetail', 'id', 'medio_id');
     }
     
 }

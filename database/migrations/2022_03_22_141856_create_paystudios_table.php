@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('paystudios', function (Blueprint $table) {
+        Schema::create('paystudios', function (Blueprint $table) { /// funciona como statstudios controllador
             $table->bigIncrements("id");
             $table->date("date")->nullable();
+            $table->string('num')->nullable()->defaultValue('******');
+            $table->string('data1')->nullable()->defaultValue('******');
+            $table->string('data2')->nullable()->defaultValue('******');
             $table->date("date_ini")->nullable();
             $table->date("date_finish")->nullable();
             $table->double("payout")->default(0);
@@ -23,8 +26,10 @@ return new class extends Migration
             $table->string("program")->nullable();
             $table->unsignedBigInteger('studio_id')->nullable();
             $table->foreign('studio_id')->references('id')->on('estudios');
-            $table->unsignedBigInteger('page_id')->nullable();
-            $table->foreign('page_id')->references('id')->on('pages');
+            $table->unsignedBigInteger('page_id');
+            $table->foreign('page_id')->references('id')->on('pages')->nullable();
+            $table->unsignedInteger('medio_id');
+            $table->foreign('medio_id')->references('id')->on('paymediosdetails')->nullable();
             $table->timestamps();
         });
     }

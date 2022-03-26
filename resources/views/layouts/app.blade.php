@@ -42,6 +42,9 @@
                     <ul class="navbar-nav mr-auto">
 						<!--Nav Bar Hooks - Do not delete!!-->
 						<li class="nav-item">
+                            <a href="{{ url('/paystudios') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Paystudios</a> 
+                        </li>
+						<li class="nav-item">
                             <a href="{{ route('apichatur') }}" class="nav-link"><i class="fab fa- text-info"></i> 🍬Apicams</a> 
                         </li>
                         <li class="nav-item">

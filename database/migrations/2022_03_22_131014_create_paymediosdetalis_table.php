@@ -16,12 +16,16 @@ return new class extends Migration
         Schema::create('paymediosdetails', function (Blueprint $table) {
             $table->integerIncrements("id");   
             $table->string('name')->index();
+            $table->string('account')->defaultValue(0)->nullable();
+            $table->string('data1')->defaultValue(0)->nullable();
+            $table->string('data2')->defaultValue(0)->nullable();
+            $table->string('data3')->defaultValue(0)->nullable();
             $table->boolean('status')->nullable()->defaultValue(true); //eliminacion 
             $table->unsignedBigInteger('studio_id')->nullable();
             $table->foreign('studio_id')->references('id')->on('estudios')->nullable();
-            $table->unsignedBigInteger('model_id')->nullable();;
+            $table->unsignedBigInteger('model_id')->nullable();
             $table->foreign('model_id')->references('id')->on('modelos');
-            $table->unsignedInteger('paymedio_id')->nullable();;
+            $table->unsignedInteger('paymedio_id')->nullable();
             $table->foreign('paymedio_id')->references('id')->on('paymedios');
             $table->timestamps();
         });

@@ -31,9 +31,10 @@ class Moneda extends Model
         return $this->hasMany('App\Models\Paypage', 'moneda_id', 'id');
     }
 
-    public function page()
+    public function monedanax()
     {
         return $this->hasMany('App\Models\Page', 'moneda_id', 'id');
     }
+
     
 }

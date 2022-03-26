@@ -16,19 +16,29 @@ class Invoicepaystudios extends Component
     public $updateMode = false;
 	public $pdfbtn = false;
 	public $formato_moneda;
-	
+	public $obj_factura =null;
 	public $id_invoices;
 		
 	public function mount($id_invoices= null) {
 		//$this->formatter = new NumeroALetras();
 		$this->id_invoices = $id_invoices;
 		$this->pdfbtn = true;
+
+		$this->obj_factura = false;
+
+
 	}
 
 	public function pdf($row=null) {
-
+		
+		//$this->obj_factura = true;
 		$this->pdfbtn = "entro expor archivo";
-		dd($row);
+		$this->obj_factura  = $row;
+		$this->obj_factura["footer"] ="wait code footer";
+		//dd($this->obj_factura["name"]);
+	//	dd($this->obj_factura["empresa"]["name"]);
+
+		dd($this->obj_factura);
 	}
 
     public function render()
@@ -36,6 +46,11 @@ class Invoicepaystudios extends Component
 		//$this->formato_moneda = new NumeroALetras();
 		$vary =  new NumeroALetras();
 		$this->formato_moneda = $vary->toMoney(2500.90, 2, 'DÓLARES', 'CENTAVOS');
+	
+
+		
+			//dd("entro..");
+		
 
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.invoicepaystudios.view', [
@@ -149,6 +164,7 @@ class Invoicepaystudios extends Component
 
     public function update()
     {
+		
         $this->validate([
 		'name' => 'required',
 		'date' => 'required',

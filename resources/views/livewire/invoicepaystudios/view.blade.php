@@ -29,10 +29,11 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Name</th>
+								<th>Paystudio</th>
+								<th>Des</th>
 								<th>Date</th>
-								<th>Payout</th>
-								<th>Dolar</th>
+								<th>Total</th>
+								<th>USD/EU</th>
 								<th>Dolar.O</th>
 								<th>Dolar.P</th>
 								<th>Iva</th>
@@ -40,18 +41,23 @@
 								<th>Studio</th>
 								<th>Contable</th>
 								<th>Moneda</th>
-								<th>Monetizador</th>
-								<th>Paystudio</th>
+								<th>Studio</th>
+							
 								<td>cmd</td>
 							</tr>
 						</thead>
 						<tbody>
 							@foreach($invoicepaystudios as $row)
 							<tr>
-								<td>{{ $loop->iteration }}</td> 
+								<td>
+									ID  {{ $row->paystudio->id }}/
+									Num {{ $row->paystudio->num }}
+								/ empresa / {{$row->empresa->name }}
+								</td> 
+								<td>{{ $row->monetizadore->name}}/{{$row->monetizadore->nit }}</td>
 								<td>{{ $row->name }} / {{ $row->paystudio->program }}</td>
 								<td>{{ $row->date }}</td>
-								<td>{{ $row->payout }}</td>
+								<td>{{ $row->paystudio->payout }}</td>
 								<td>{{ $row->dolar_value }}</td>
 								<td>{{ $row->dolar_oficial }}</td>
 								<td>{{ $row->dolar_pagado }}</td>
@@ -80,9 +86,16 @@
 								</td>
 								<td>{{ $row->estudio->name }} </td>
 								<td>{{ $row->contable->name }}</td>
-								<td>{{ $row->moneda->name }}</td>
-								<td>{{ $row->monetizadore->name}}/{{$row->monetizadore->contact }}</td>
-								<td>{{ $row->estudio->name }} / {{ $row->paystudio->date }}</td>
+								<td>{{ $row->moneda->name }} / 
+								.....	{{ $row["paystudio"]["medio_id"] }} / 
+									medix **
+									****{{ $row->paystudio->name
+									 }}
+									 ****medio
+									
+								</td>
+							
+								<td>{{ $row->estudio->name }}</td>
 								<td width="90">
 									<x-BtnActions>
 										<x-slot name="id_row">{{$row->id}}</x-slot>

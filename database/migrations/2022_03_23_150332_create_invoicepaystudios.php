@@ -36,6 +36,9 @@ return new class extends Migration
             $table->foreign('monetizador_id')->references('id')->on('monetizadores')->nullable();
             $table->unsignedBigInteger('paystudio_id');
             $table->foreign('paystudio_id')->references('id')->on('paystudios');
+
+            $table->unsignedBigInteger('empresa_id');
+            $table->foreign('empresa_id')->references('id')->on('empresas');
            
             $table->timestamps();
         });

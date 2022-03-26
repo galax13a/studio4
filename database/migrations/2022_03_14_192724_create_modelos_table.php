@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements("id");
             $table->string('name')->index();
             $table->string('nick')->nullable();
+            $table->string('nick2')->nullable();
             $table->string('email')->nullable();
             $table->string('dni')->nullable();
             $table->string('wsp')->nullable();

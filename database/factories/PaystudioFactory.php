@@ -2,22 +2,24 @@
 
 namespace Database\Factories;
 
-use App\Models\Statstudio;
-use App\Models\Estudio;
-use App\Models\Page;
-use App\Models\Paymediosdetail;
+use App\Models\Paystudio;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class StatstudioFactory extends Factory
+use App\Models\Estudio;
+use App\Models\Page;
+use App\Models\Paymediosdetail;
+
+class PaystudioFactory extends Factory
 {
-    protected $model = Statstudio::class;
+    protected $model = Paystudio::class;
 
     public function definition()
     {
 		return [
 			'date' => date('Y-m-d'),
 			'date_ini' => null,
+			'num' =>$this->faker->randomNumber(),
 			'date_finish' => null,
 			'payout' => $this->faker->randomNumber(),
 			'status' => 0,

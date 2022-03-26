@@ -1,4 +1,6 @@
 
+@if($this->obj_factura)
+
 <div class="invoice-box">
     <table cellpadding="0" cellspacing="0">
         <tr class="top">
@@ -79,8 +81,8 @@
         </tr>
 
         <tr class="item">
-            <td>Website design</td>
-            <td>3</td>
+            <td>{{ $this->obj_factura["name"] }}</td>
+            <td>1</td>
             <td>$300/ Total(900)</td>
         </tr>
         
@@ -93,7 +95,9 @@
         </tr>
     </table>
 </div>
-
+@else 
+<h3>Error de Carga de factura...</h3>
+@endif
 <style>
     .invoice-box {
         max-width: 800px;

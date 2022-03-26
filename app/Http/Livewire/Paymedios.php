@@ -21,7 +21,7 @@ class Paymedios extends Component
             'paymedios' => Paymedio::latest()
 						->orWhere('name', 'LIKE', $keyWord)
 						->orWhere('datax', 'LIKE', $keyWord)
-						->orWhere('studio_id', 'LIKE', $keyWord)
+				
 						->orWhere('moneda_id', 'LIKE', $keyWord)
 						->orWhere('status', 'LIKE', $keyWord)
 						->paginate(10),

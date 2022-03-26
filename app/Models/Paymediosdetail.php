@@ -13,7 +13,7 @@ class Paymediosdetail extends Model
 
     protected $table = 'paymediosdetails';
 
-    protected $fillable = ['name','status','studio_id','model_id','paymedio_id'];
+    protected $fillable = ['account','name','status','studio_id','model_id','paymedio_id'];
 	
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

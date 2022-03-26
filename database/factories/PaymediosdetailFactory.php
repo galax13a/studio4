@@ -18,9 +18,11 @@ class PaymediosdetailFactory extends Factory
         return [
 			'name' => Paymedio::all()->random()->name,
 			'status' => 1,
+            'account' => 1099990,
 			'studio_id' => Estudio::all()->random()->id,
 			'model_id' => Modelo::all()->random()->id,
-			'paymedio_id' => Paymedio::all()->random()->id
+            'paymedio_id' =>Paymedio::all()->random()->id
+
         ];
 
         

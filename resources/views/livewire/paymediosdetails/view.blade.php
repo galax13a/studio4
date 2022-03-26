@@ -19,11 +19,12 @@
 							<tr> 
 								<td>#</td> 
 								<th>Name</th>
+								<th>Account</th>
 								<th>Status</th>
 								<th>Studio</th>
 								<th>Model</th>
 								<th>Paymedio</th>
-								<td>ACTIONS</td>
+								<td>data</td>
 							</tr>
 						</thead>
 						<tbody>
@@ -31,6 +32,7 @@
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
 								<td>{{ $row->name }}</td>
+								<td>{{ $row->account }}</td>
 								<td>{{ $row->status }}</td>
 								<td>
 									@if (!is_null($row->estudio))

@@ -17,7 +17,7 @@ class PageFactory extends Factory
     public function definition()
     {
         return [
-			'name' => $this->faker->name,
+			'name' => Pagemaster::all()->random()->name,
 			'monedax' => 'tks',
 			'value' => 60,
 			'link' => $this->faker->url,

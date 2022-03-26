@@ -12,7 +12,7 @@ class Paymediosdetails extends Component
 
 	protected $paginationTheme = 'bootstrap';
     public $selected_id, $keyWord, $name, $status, $studio_id, $model_id, $paymedio_id;
-    public $updateMode = false;
+    public $updateMode = false, $account;
 
     public function render()
     {
