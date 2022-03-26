@@ -21,8 +21,11 @@
       <!-- Styles -->
       <link href="{{ asset('css/adds.css') }}" rel="stylesheet">
     <link href="{{ asset('icons/fontawesome-free-6.1.1-web/css/all.min.css') }}" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link defer rel="stylesheet" type="text/css" href="{{ asset('css/datatables.min.css') }}"/>
  
+    <link defer rel="stylesheet" type="text/css" href="{{ asset('css/responsive.bootstrap5.min.css') }}"/>
+ 
+
 	 @livewireStyles
 </head>
 <body>
@@ -110,10 +113,52 @@
         </main>
     </div>
     @livewireScripts
+
+    
+
+    <script type="text/javascript" src="{{ asset('js/jquery-3.6.0.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/datatables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/dataTables.bootstrap5.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js/responsive.bootstrap5.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/dataTables.responsive.min.js') }}"></script>
+
+    
+
+
 <script type="text/javascript">
+
+document.addEventListener('livewire:load', function() {
+    $.noConflict();
+    
+    $('#tablaxxx').DataTable({
+                    destroy: true,
+                    responsive:true,
+                    autoWidth:false, 
+                    buttons: [
+                            'copy', 'excel', 'pdf'
+                        ]
+         });
+         
+	    window.livewire.on('tablex', () => {
+            //$('#tablaxxx').DataTable.remove();
+                                 //alert("emitio tablas upt");
+                                 $('#tablaxxx').DataTable();
+                            });
+
+          $( "page-item" ).click(function() {
+                                            alert( "Handler for .click() called." );
+                                            
+                                    });
+
+        
+    })
+
 	window.livewire.on('closeModal', () => {
 		$('#createDataModal').modal('hide');
 	});
+
 </script>
 
 <style>

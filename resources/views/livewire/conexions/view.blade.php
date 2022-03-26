@@ -1,5 +1,4 @@
-@section('title', __('Conexions'))
-<div class="container-fluid">
+<div id="fluidiv" class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col-md-12">
 			<div class="card shadow-lg p-3">
@@ -14,7 +13,7 @@
 						@include('livewire.conexions.create')
 						@include('livewire.conexions.update')
 				<div class="table-responsive">
-					<table class="table table-bordered table-sm">
+					<table  id="tablaxxx" class="table table-spriped ">
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 

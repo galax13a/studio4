@@ -39,7 +39,7 @@
                             {{ $this->obj_factura["empresa"]["name"]}} <br />
                             cc : {{ $this->obj_factura["empresa"]["data1"]}}<br />
                             Celular : {{ $this->obj_factura["empresa"]["tel"]}} <br>
-                            Dir : DIRECCIÓN: Carrera 30 #86-13
+                            Dir : Carrera 30 #86-13
                         </td>
                     </tr>
                 </table>
@@ -81,7 +81,7 @@
         <tr class="item">
             <td>{{ $this->obj_factura["name"] }}</td>
             <td>1</td>
-            <td>${{$this->obj_factura["payout"]}} / Total({{$this->obj_factura["payout"]}} )</td>
+            <td>${{$this->obj_factura["payout"]}} / <b> Total({{$this->obj_factura["payout"]}}) </b></td>
         </tr>
         <tr class="total">
             <td></td>
@@ -91,7 +91,7 @@
     </table>
 </div>
 @else 
-<h3>Error de Carga de factura...</h3>
+<b>esperando factu</b>
 @endif
 <style>
     .invoice-box {

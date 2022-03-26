@@ -17,6 +17,8 @@ class Modelos extends Component
     public function render()
     {
 		$keyWord = '%'.$this->keyWord .'%';
+		$this->emit('tablex');
+
         return view('livewire.modelos.view', [
             'modelos' => Modelo::latest()
 						->orWhere('name', 'LIKE', $keyWord)
@@ -31,7 +33,7 @@ class Modelos extends Component
 						->orWhere('img3', 'LIKE', $keyWord)
 						->orWhere('status', 'LIKE', $keyWord)
 						->orWhere('studio_id', 'LIKE', $keyWord)
-						->paginate(10),
+						->paginate(5),
         ]);
     }
 	

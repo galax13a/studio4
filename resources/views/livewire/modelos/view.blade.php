@@ -14,7 +14,7 @@
 						@include('livewire.modelos.create')
 						@include('livewire.modelos.update')
 				<div class="table-responsive">
-					<table class="table table-bordered table-sm">
+					<table id="tablaxxx" class="table table-bordered table-sm">
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
@@ -63,8 +63,6 @@
 			</div>
 		</div>
 	</div>
+
 </div>
 
-<style>
-
-</style>
