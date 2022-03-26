@@ -76,6 +76,9 @@
                 <input wire:model="paystudio_id" type="text" class="form-control" id="paystudio_id" placeholder="Paystudio Id">@error('paystudio_id') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
+        
+
+
                 </form>
             </div>
             <div class="modal-footer">

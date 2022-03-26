@@ -75,6 +75,11 @@
                 <input wire:model="paystudio_id" type="text" class="form-control" id="paystudio_id" placeholder="Paystudio Id">@error('paystudio_id') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
+            <div class="form-group">
+                <label for="empresa_id">empresa</label>
+                <input wire:model="empresa_id" type="text" class="form-control" id="empresa_id" placeholder="empresa Id">@error('empresa_id') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
+
                 </form>
             </div>
             <div class="modal-footer">

@@ -27,9 +27,9 @@
 								<th>Payout</th>
 								<th>Status</th>
 								<th>Program</th>
-								<th>Studio Id</th>
-								<th>Page Id</th>
-								<th>Medio Id</th>
+								<th>Studio</th>
+								<th>Page</th>
+								<th>MedioPay</th>
 								<td>ACTIONS</td>
 							</tr>
 						</thead>
@@ -49,9 +49,10 @@
 								<td>{{ $row->program }}</td>
 								<td>{{ $row->studio_id }}</td>
 								<td>{{ $row->page_id }}</td>
-								<td>medio  : 0.0</td>
+								<td>{{ $row->medio->name}}</td>
+					
 								<td width="90">
-								
+							
 									<x-BtnActions>
 										<x-slot name="id_row">{{$row->id}}</x-slot>
 									 </x-BtnActions>

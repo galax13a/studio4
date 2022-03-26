@@ -31,7 +31,7 @@
 							@foreach($paymediosdetails as $row)
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
-								<td>{{ $row->name }}</td>
+								<td>{{$row->paymedio->name }} /{{ $row->name }}</td>
 								<td>{{ $row->account }}</td>
 								<td>{{ $row->status }}</td>
 								<td>

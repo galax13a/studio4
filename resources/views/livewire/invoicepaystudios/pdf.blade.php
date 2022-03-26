@@ -8,14 +8,15 @@
                 <table>
                     <tr style="float: right;">
                         <td class="title">
-                           <h6>Factura/TeamBrodcast</h6>
+                           <h6>Recibo Cobro</h6>
                         </td>
                         <td>
-                           <b class="btn btn-success"> Factura #: 123 </b> <br />
-                           <h6> Nit #: 17845523 </h6> <br />
+                           <b class="btn btn-success"> Factura #: {{ $this->obj_factura["paystudio"]["num"]}} </b> <br />
+                           <h6> Nit #: {{ $this->obj_factura["empresa"]["nit"]}} </h6> <br />
                             Creado: {{Date("Y-m-d H:i:s")}}<br />
-                            Generado : February 1, 2015 <br>
-                            #Num Dian : 4522452-75215
+                           Elaborado : {{$this->obj_factura["date"]}}
+                            <br>
+                            # Dian : {{ $this->obj_factura["empresa"]["nfactory"]}}
                         </td>
                     </tr>
                 </table>
@@ -27,17 +28,18 @@
                 <table>
                     <tr>
                         <td>
-                            <h4>Monetizador/Cobrar a</h4>
-                            <b>G7 BUSINESS SOLUTIONS  CORP</b><br />
-                            NIT.:  82-5457471<br />
-                            info : www.none.com
+                            <h4>Monetizacion/Cobrar a</h4>
+                            <b>{{ $this->obj_factura["monetizadore"]["contact"]}}</b><br />
+                            NIT.:  {{ $this->obj_factura["monetizadore"]["nit"]}}<br />
+                            info :{{ $this->obj_factura["monetizadore"]["pagina"]}}
                         </td>
 
                         <td>
                             <b>Pagar a nombre de </b>  <br>
-                            Jaime Garzon <br />
-                            cc : 124782225<br />
-                            Celular : 31024895
+                            {{ $this->obj_factura["empresa"]["name"]}} <br />
+                            cc : {{ $this->obj_factura["empresa"]["data1"]}}<br />
+                            Celular : {{ $this->obj_factura["empresa"]["tel"]}} <br>
+                            Dir : DIRECCIÓN: Carrera 30 #86-13
                         </td>
                     </tr>
                 </table>
@@ -47,12 +49,12 @@
         <tr class="heading">
             <td>Metodo de Pago</td>
             <td>N# Cuenta</td>
-            <td>Cuenta</td>
+            <td>Tipo Cuenta</td>
         </tr>
 
         <tr class="details">
-            <td>Bancolombia -Ahorros</td>
-            <td>4851593662</td>
+            <td>{{ $this->obj_factura["medios"]["name"]}} </td>
+            <td>{{ $this->obj_factura["medios"]["account"]}}</td>
             <td> Ahorros</td>
         </tr>
 
@@ -64,15 +66,11 @@
 
         <tr class="details">
             <td>
-                @php
-            
-               
-                @endphp
-              {{$this->formato_moneda}}
+             
+             La Suma de {{$this->obj_factura["payout"]}} / {{$this->formato_moneda}}
             </td>
             <td>1.000</td>
-            <td>126 usd</td>
-        </tr>
+            <td>{{$this->obj_factura["payout"]}} USD
 
         <tr class="heading">
             <td>Descripcion</td>
@@ -83,15 +81,12 @@
         <tr class="item">
             <td>{{ $this->obj_factura["name"] }}</td>
             <td>1</td>
-            <td>$300/ Total(900)</td>
+            <td>${{$this->obj_factura["payout"]}} / Total({{$this->obj_factura["payout"]}} )</td>
         </tr>
-        
-    
-        
         <tr class="total">
             <td></td>
             <td>
-                <br> <b class="btn btn-primary"> Total Factura: $900 </b> </td>
+                <br> <b class="btn btn-primary"> Total Factura: ${{$this->obj_factura["payout"]}}  </b> </td>
         </tr>
     </table>
 </div>

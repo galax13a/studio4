@@ -12,31 +12,35 @@
                 <form>
 					<input type="hidden" wire:model="selected_id">
             <div class="form-group">
-                <label for="name"></label>
+                <label for="name">NAME</label>
                 <input wire:model="name" type="text" class="form-control" id="name" placeholder="Name">@error('name') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="pagina"></label>
+                <label for="name">NIT</label>
+                <input wire:model="nit" type="text" class="form-control" id="nit" placeholder="NIT">@error('nit') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
+                <label for="pagina">PAGE</label>
                 <input wire:model="pagina" type="text" class="form-control" id="pagina" placeholder="Pagina">@error('pagina') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="contact"></label>
+                <label for="contact">CONTACT</label>
                 <input wire:model="contact" type="text" class="form-control" id="contact" placeholder="Contact">@error('contact') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="email"></label>
+                <label for="email">EMAIL</label>
                 <input wire:model="email" type="text" class="form-control" id="email" placeholder="Email">@error('email') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="porce"></label>
+                <label for="porce">PORCE</label>
                 <input wire:model="porce" type="text" class="form-control" id="porce" placeholder="Porce">@error('porce') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="status"></label>
+                <label for="status">STATUS</label>
                 <input wire:model="status" type="text" class="form-control" id="status" placeholder="Status">@error('status') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="datax"></label>
+                <label for="datax">DATAX</label>
                 <input wire:model="datax" type="text" class="form-control" id="datax" placeholder="Datax">@error('datax') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 

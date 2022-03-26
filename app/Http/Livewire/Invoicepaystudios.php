@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Invoicepaystudio;
 use Luecano\NumeroALetras\NumeroALetras;
+use App\Models\Paymediosdetail;
 
 class Invoicepaystudios extends Component
 {
@@ -17,41 +18,35 @@ class Invoicepaystudios extends Component
 	public $pdfbtn = false;
 	public $formato_moneda;
 	public $obj_factura =null;
-	public $id_invoices;
+	public $id_invoices,$empresa_id;
 		
 	public function mount($id_invoices= null) {
 		//$this->formatter = new NumeroALetras();
 		$this->id_invoices = $id_invoices;
 		$this->pdfbtn = true;
-
 		$this->obj_factura = false;
-
-
 	}
 
-	public function pdf($row=null) {
+	public function pdf($row=null,$medios=null) {
 		
 		//$this->obj_factura = true;
 		$this->pdfbtn = "entro expor archivo";
 		$this->obj_factura  = $row;
-		$this->obj_factura["footer"] ="wait code footer";
+		$this->obj_factura["medios"] =  $medios;
 		//dd($this->obj_factura["name"]);
-	//	dd($this->obj_factura["empresa"]["name"]);
+		//	dd($this->obj_factura["empresa"]["name"]);
+	    //dd($this->obj_factura);
+		$vary =  new NumeroALetras();
+		$this->formato_moneda = $vary->toMoney($this->obj_factura["payout"], 0, 'DÓLARES', 'CENTAVOS');
 
-		dd($this->obj_factura);
 	}
 
     public function render()
     {
 		//$this->formato_moneda = new NumeroALetras();
-		$vary =  new NumeroALetras();
-		$this->formato_moneda = $vary->toMoney(2500.90, 2, 'DÓLARES', 'CENTAVOS');
-	
-
-		
-			//dd("entro..");
-		
-
+	//	$vary =  new NumeroALetras();
+	//	$this->formato_moneda = $vary->toMoney(2500.90, 2, 'DÓLARES', 'CENTAVOS');
+	date_default_timezone_set("America/Bogota");
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.invoicepaystudios.view', [
             'invoicepaystudios' => Invoicepaystudio::latest()
@@ -129,7 +124,8 @@ class Invoicepaystudios extends Component
 			'contable_id' => $this-> contable_id,
 			'moneda_id' => $this-> moneda_id,
 			'monetizador_id' => $this-> monetizador_id,
-			'paystudio_id' => $this-> paystudio_id
+			'paystudio_id' => $this-> paystudio_id,
+			'empresa_id' => $this->empresa_id
         ]);
         
         $this->resetInput();

@@ -21,7 +21,6 @@ class Paymedios extends Component
             'paymedios' => Paymedio::latest()
 						->orWhere('name', 'LIKE', $keyWord)
 						->orWhere('datax', 'LIKE', $keyWord)
-				
 						->orWhere('moneda_id', 'LIKE', $keyWord)
 						->orWhere('status', 'LIKE', $keyWord)
 						->paginate(10),
@@ -38,7 +37,6 @@ class Paymedios extends Component
     {		
 		$this->name = null;
 		$this->datax = null;
-		$this->studio_id = null;
 		$this->moneda_id = null;
 		$this->status = null;
     }
@@ -53,7 +51,6 @@ class Paymedios extends Component
         Paymedio::create([ 
 			'name' => $this-> name,
 			'datax' => $this-> datax,
-			'studio_id' => $this-> studio_id,
 			'moneda_id' => $this-> moneda_id,
 			'status' => $this-> status
         ]);
@@ -70,7 +67,6 @@ class Paymedios extends Component
         $this->selected_id = $id; 
 		$this->name = $record-> name;
 		$this->datax = $record-> datax;
-		$this->studio_id = $record-> studio_id;
 		$this->moneda_id = $record-> moneda_id;
 		$this->status = $record-> status;
 		
@@ -89,7 +85,6 @@ class Paymedios extends Component
             $record->update([ 
 			'name' => $this-> name,
 			'datax' => $this-> datax,
-			'studio_id' => $this-> studio_id,
 			'moneda_id' => $this-> moneda_id,
 			'status' => $this-> status
             ]);

@@ -32,7 +32,7 @@
 								<th>Paystudio</th>
 								<th>Des</th>
 								<th>Date</th>
-								<th>Total</th>
+								<th>Cobrar</th>
 								<th>USD/EU</th>
 								<th>Dolar.O</th>
 								<th>Dolar.P</th>
@@ -50,14 +50,20 @@
 							@foreach($invoicepaystudios as $row)
 							<tr>
 								<td>
-									ID  {{ $row->paystudio->id }}/
-									Num {{ $row->paystudio->num }}
-								/ empresa / {{$row->empresa->name }}
+							
+									Num {{ $row->paystudio->num }}/
+								     {{$row->empresa->name }}
+
+								@php
+							
+								$data_medios  = App\Models\Paymediosdetail::find($row["paystudio"]["medio_id"]);
+							 	@endphp
+						
 								</td> 
 								<td>{{ $row->monetizadore->name}}/{{$row->monetizadore->nit }}</td>
 								<td>{{ $row->name }} / {{ $row->paystudio->program }}</td>
 								<td>{{ $row->date }}</td>
-								<td>{{ $row->paystudio->payout }}</td>
+								<td>{{ $row->payout }}</td>
 								<td>{{ $row->dolar_value }}</td>
 								<td>{{ $row->dolar_oficial }}</td>
 								<td>{{ $row->dolar_pagado }}</td>
@@ -66,7 +72,7 @@
 								<td>
 									<x-btnicon >
 										<x-slot name="icon" >
-											<label wire:click.prevent="pdf({{$row}})" class="btn btn-dark active">
+											<label wire:click.prevent="pdf({{$row}},{{$data_medios}})" class="btn btn-dark active">
 											<input  type="radio" name="options" id="option1" autocomplete="off" checked> 
 											<i  class="fa-solid fa-file-pdf mr-2 "></i>
 										</label>
@@ -86,13 +92,8 @@
 								</td>
 								<td>{{ $row->estudio->name }} </td>
 								<td>{{ $row->contable->name }}</td>
-								<td>{{ $row->moneda->name }} / 
-								.....	{{ $row["paystudio"]["medio_id"] }} / 
-									medix **
-									****{{ $row->paystudio->name
-									 }}
-									 ****medio
-									
+								<td>{{ $row->moneda->name }}/
+									{{ $row->paystudio_id }} 
 								</td>
 							
 								<td>{{ $row->estudio->name }}</td>

@@ -13,7 +13,7 @@ class Invoicepaystudio extends Model
 
     protected $table = 'invoicepaystudios';
 
-    protected $fillable = ['name','date','payout','dolar_value','dolar_oficial','dolar_pagado','iva','status','img_studio','img_payment','datax','studio_id','contable_id','moneda_id','monetizador_id','paystudio_id'];
+    protected $fillable = ['empresa_id','name','date','payout','dolar_value','dolar_oficial','dolar_pagado','iva','status','img_studio','img_payment','datax','studio_id','contable_id','moneda_id','monetizador_id','paystudio_id'];
 	
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -61,7 +61,7 @@ class Invoicepaystudio extends Model
     }
     public function medio()
     {
-        return $this->hasOne('App\Models\Paymedio', 'id', 'paymedio_id');
+        return $this->hasOne('App\Models\Paymediosdetail', 'id', 'paymedio_id');
     }
     
 }

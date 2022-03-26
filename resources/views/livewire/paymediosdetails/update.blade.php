@@ -20,8 +20,8 @@
                 <input wire:model="status" type="text" class="form-control" id="status" placeholder="Status">@error('status') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="studio_id"></label>
-                <input wire:model="studio_id" type="text" class="form-control" id="studio_id" placeholder="Studio Id">@error('studio_id') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="studio_id">Account</label>
+                <input wire:model="account" type="text" class="form-control" id="account" placeholder="account Id">@error('account') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="model_id"></label>

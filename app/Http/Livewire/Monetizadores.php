@@ -11,7 +11,7 @@ class Monetizadores extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $name, $pagina, $contact, $email, $porce, $status, $datax;
+    public $selected_id, $keyWord, $name, $pagina, $contact, $email, $nit, $porce, $status, $datax;
     public $updateMode = false;
 
     public function render()
@@ -45,6 +45,7 @@ class Monetizadores extends Component
 		$this->porce = null;
 		$this->status = null;
 		$this->datax = null;
+        $this->nit = null;
     }
 
     public function store()
@@ -61,7 +62,8 @@ class Monetizadores extends Component
 			'email' => $this-> email,
 			'porce' => $this-> porce,
 			'status' => $this-> status,
-			'datax' => $this-> datax
+			'datax' => $this-> datax,
+            'nit' => $this->nit
         ]);
         
         $this->resetInput();
@@ -81,6 +83,7 @@ class Monetizadores extends Component
 		$this->porce = $record-> porce;
 		$this->status = $record-> status;
 		$this->datax = $record-> datax;
+        $this->nit = $record-> nit;
 		
         $this->updateMode = true;
     }
@@ -101,7 +104,8 @@ class Monetizadores extends Component
 			'email' => $this-> email,
 			'porce' => $this-> porce,
 			'status' => $this-> status,
-			'datax' => $this-> datax
+			'datax' => $this-> datax,
+            'nit' => $this->nit
             ]);
 
             $this->resetInput();

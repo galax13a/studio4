@@ -46,5 +46,10 @@ class Paystudio extends Model
     {
         return $this->hasOne('App\Models\Paymediosdetail', 'id', 'medio_id');
     }
+
+    public function medio()
+    {
+        return $this->hasOne('App\Models\Paymediosdetail', 'id', 'medio_id');
+    }
     
 }

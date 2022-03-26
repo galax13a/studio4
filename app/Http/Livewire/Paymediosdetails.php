@@ -11,7 +11,7 @@ class Paymediosdetails extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $name, $status, $studio_id, $model_id, $paymedio_id;
+    public $selected_id, $keyWord, $name, $status, $model_id, $paymedio_id;
     public $updateMode = false, $account;
 
     public function render()
@@ -38,7 +38,7 @@ class Paymediosdetails extends Component
     {		
 		$this->name = null;
 		$this->status = null;
-		$this->studio_id = null;
+		$this->account = null;
 		$this->model_id = null;
 		$this->paymedio_id = null;
     }
@@ -52,8 +52,8 @@ class Paymediosdetails extends Component
         Paymediosdetail::create([ 
 			'name' => $this-> name,
 			'status' => $this-> status,
-			'studio_id' => $this-> studio_id,
 			'model_id' => $this-> model_id,
+            'account' =>$this->account,
 			'paymedio_id' => $this-> paymedio_id
         ]);
         
@@ -69,7 +69,7 @@ class Paymediosdetails extends Component
         $this->selected_id = $id; 
 		$this->name = $record-> name;
 		$this->status = $record-> status;
-		$this->studio_id = $record-> studio_id;
+		$this->account = $record-> account;
 		$this->model_id = $record-> model_id;
 		$this->paymedio_id = $record-> paymedio_id;
 		
@@ -87,9 +87,9 @@ class Paymediosdetails extends Component
             $record->update([ 
 			'name' => $this-> name,
 			'status' => $this-> status,
-			'studio_id' => $this-> studio_id,
 			'model_id' => $this-> model_id,
-			'paymedio_id' => $this-> paymedio_id
+			'paymedio_id' => $this-> paymedio_id,
+            'account' => $this-> account
             ]);
 
             $this->resetInput();
