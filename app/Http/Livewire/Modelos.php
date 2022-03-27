@@ -13,11 +13,26 @@ class Modelos extends Component
 	protected $paginationTheme = 'bootstrap';
     public $selected_id, $keyWord, $name, $nick, $email, $dni, $wsp, $porce, $typomodel, $img1, $img2, $img3, $status, $studio_id;
     public $updateMode = false;
+	public $id_table;
 
+
+	public function mount(){
+		//$this->id_table = rand();
+	}
+
+	public function updatingKeyWord()
+	{
+		$this->resetPage();
+	}
+	public function tablas(){
+		dd("para alerta tabla");
+	}
     public function render()
     {
 		$keyWord = '%'.$this->keyWord .'%';
-		$this->emit('tablex');
+		$this->id_table = rand();
+		$this->emit('tablex_destroy',$this->id_table);
+		$this->emit('tablex',$this->id_table);
 
         return view('livewire.modelos.view', [
             'modelos' => Modelo::latest()

@@ -24,8 +24,11 @@
     <link defer rel="stylesheet" type="text/css" href="{{ asset('css/datatables.min.css') }}"/>
  
     <link defer rel="stylesheet" type="text/css" href="{{ asset('css/responsive.bootstrap5.min.css') }}"/>
- 
-
+    
+    <link defer rel="stylesheet" type="text/css" href="{{ asset('css/buttons.dataTables.min.css') }}"/>
+    <link defer rel="stylesheet" type="text/css" href="{{ asset('css/jquery.dataTables.min.css') }}"/>
+    
+    
 	 @livewireStyles
 </head>
 <body>
@@ -123,7 +126,16 @@
 
     <script type="text/javascript" src="{{ asset('js/responsive.bootstrap5.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/dataTables.responsive.min.js') }}"></script>
+    
+ 
+    <script type="text/javascript" src="{{ asset('js/buttons.print.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jszip.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/dataTables.buttons.min.js') }}"></script>    
+    <script type="text/javascript" src="{{ asset('js/buttons.html5.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/pdfmake.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/vfs_fonts.js') }}"></script>    
 
+    
     
 
 
@@ -131,28 +143,28 @@
 
 document.addEventListener('livewire:load', function() {
     $.noConflict();
-    
-    $('#tablaxxx').DataTable({
-                    destroy: true,
-                    responsive:true,
-                    autoWidth:false, 
-                    buttons: [
-                            'copy', 'excel', 'pdf'
-                        ]
-         });
-         
-	    window.livewire.on('tablex', () => {
-            //$('#tablaxxx').DataTable.remove();
-                                 //alert("emitio tablas upt");
-                                 $('#tablaxxx').DataTable();
-                            });
+   
+    window.livewire.on('tablex_destroy',(res)=>{
+       // alert(res);
+        $("#"+res).DataTable().destroy();
+    });
 
-          $( "page-item" ).click(function() {
-                                            alert( "Handler for .click() called." );
-                                            
-                                    });
+	 window.livewire.on('tablex', (res) => {
+           $("#"+res).DataTable({
+								paging: false,
+								searching: true,
+								retrieve: true,
+								responsive:true,
+								autoWidth:false
+							});
+           
+        });
 
-        
+        $( ".page-item" ).click(function()  {
+          //  $('#tablaxxx').DataTable().destroy();
+              //  alert( "Handler for .click() called." );
+        });
+
     })
 
 	window.livewire.on('closeModal', () => {

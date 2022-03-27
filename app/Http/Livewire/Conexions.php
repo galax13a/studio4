@@ -26,7 +26,7 @@ class Conexions extends Component
 						->orWhere('timebrb', 'LIKE', $keyWord)
 						->orWhere('studio_id', 'LIKE', $keyWord)
 						->orWhere('model_id', 'LIKE', $keyWord)
-						->paginate(25),
+						->paginate(100),
         ]);
     }
 	
