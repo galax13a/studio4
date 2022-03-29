@@ -14,7 +14,7 @@
 									<input  type="text"  value="26" class="form-control" id="timex" placeholder="timex">@error('timex') <span class="error text-danger">{{ $message }}</span> @enderror
 								</div>
 								<div class="form-group">
-									<label for="name">Min Close </label>
+									<label for="name">Min Close Room </label>
 									<input  type="text" value="1" class="form-control" id="min_close" placeholder="min_close">@error('min_close') <span class="error text-danger">{{ $message }}</span> @enderror
 								</div>
 						
@@ -40,19 +40,20 @@
 								<div class="top-container m-2 p-2"> <img  id="img_profile" src="https://roomimg.stream.highwebmedia.com/riw/velvetsugar3.jpg" class="img-fluid profile-image" width="120">
 									<div class="ml-3">
 										<h5 id="title_name" class="name">XxX</h5>
-										<p class="mail">support@chaturbate.com</p>
+										<p class="mail">Chaturbate.com</p>
 									</div>
 								</div>
 							
 								<div class="recent-border mt-4 ml-2"> <span class="recent-orders">Recent photos</span> </div>
-								<div class="wishlist-border pt-2 ml-3"> <span class="wishlist">Wishlist</span> </div>
-								<div class="fashion-studio-border pt-2 ml-3 mb-2"> <span class="fashion-studio">Fashion studio</span> </div>
+								<div class="wishlist-border pt-2 ml-2"> <span class="wishlist">Wishlist</span> </div>
+								<div class="fashion-studio-border pt-2 ml-2 mb-2"> <span id="fashion_rom" class="fashion-studio">Fashion studio</span> </div>
 							</div>
 						</div>
 					 </div>
 					  <div class="col-sm">
 						<h3> -trafic1 v 1.0</h3> <button id="btntrafic" class="btn btn-dark"type="button">Trafic start</button>
-					  </div>
+						<h3> -stop rooms</h3> <button id="btntrafic_stop" class="btn btn-success"type="button">Trafic stop</button>  
+					</div>
 					</div>
 				  </div>
 
@@ -104,13 +105,19 @@ document.addEventListener('livewire:load', function() {
         let seg_tab2 = 2000;
 		let url_photo = "https://roomimg.stream.highwebmedia.com/riw/"
 		let sala = 11;
-        let timex = 2000;
+        let timex = 5000;
         let contador = 1;
+		let con_global = 1;
+		let stoper = "start";
+		let close_win = 60000;
        
+	 $("#btntrafic_stop").prop("disabled", true);
 
     function pintar1(sala, contador) {
-            if(contador > sala) {
-                console.log("Termino Proceso");
+		//console.log("varua / " + stoper);
+            if(contador > sala || stoper === "stop") {
+               // console.log("Termino Proceso");
+
             }else{
                 console.log("pintando :" + contador)
 				i = contador
@@ -132,27 +139,52 @@ document.addEventListener('livewire:load', function() {
 				$("#title_name").html(`<b>${nicky}</b>`)
 				$("#rom_nick").val(nicky);
 				$("#room_nick").addClass("bg-dark");
-				
+				$("#fashion_rom").html(`<b> 🔥 Views : ${contador}</b>`)
 
-				
 				setTimeout(function () {
                     pintar1(sala,contador)
                 },timex,"Javascript")
                 contador = contador+1
+				con_global = contador
+				page = link
+				var mywin = window.open(page, '_blank');
+					setTimeout(function() {
+					mywin.close();
+					}, close_win);
             }
         }
 
-		function pintar2 (sala,time) {
-            console.log("go to : "+sala)
+		function pintar2 (sala,contador) {
+           // console.log("go to : "+sala)
             setTimeout(function () {
                 pintar1(sala, contador)
             },timex,"Javascript");
         }
 
-	$("#btntrafic").on("click", function(){ 
+	$("#btntrafic_stop").on("click", function(){ 
   		
+		//alert("Stop");
+		$("#btntrafic").removeAttr('disabled');
+		$("#btntrafic_stop").prop("disabled", true);
+		//alert("contador global : " + con_global);
+		stoper = "stop"
+		
+		console.log(stoper);
+		  
+	  });
+
+	$("#btntrafic").on("click", function(){ 
+		stoper = "star"
+		//alert("contador de starcho : " + contador);
+		$("#btntrafic").prop("disabled", true);
+		$("#btntrafic_stop").prop("disabled", false);
 		var nFilas = $("#tabla1 tr").length-1;
-		pintar2(nFilas,timex)
+
+		if(con_global > contador) {
+			pintar2(nFilas,con_global)
+		}else pintar2(nFilas,contador)
+
+		
 		
 	});
 
