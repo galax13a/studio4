@@ -2,21 +2,23 @@
 
 namespace Database\Factories;
 
-use App\Models\Moneda;
+use App\Models\Trafic1;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class MonedaFactory extends Factory
+class Trafic1Factory extends Factory
 {
-    protected $model = Moneda::class;
+    protected $model = Trafic1::class;
 
     public function definition()
     {
         return [
-			'name' => $this->faker->name,
-			'code' => $this->faker->name,
+			'url' => $this->faker->name,
+			'pagui' => $this->faker->name,
 			'datax' => $this->faker->name,
 			'status' => $this->faker->name,
+			'page_id' => $this->faker->name,
+			'tiposala' => $this->faker->name,
         ];
     }
 }

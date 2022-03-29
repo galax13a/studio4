@@ -13,7 +13,7 @@ class Modelos extends Component
 	protected $paginationTheme = 'bootstrap';
     public $selected_id, $keyWord, $name, $nick, $email, $dni, $wsp, $porce, $typomodel, $img1, $img2, $img3, $status, $studio_id;
     public $updateMode = false;
-	public $id_table;
+	public $id_table, $seleccion_col;
 
 
 	public function mount(){
@@ -31,8 +31,11 @@ class Modelos extends Component
     {
 		$keyWord = '%'.$this->keyWord .'%';
 		$this->id_table = rand();
+
 		$this->emit('tablex_destroy',$this->id_table);
 		$this->emit('tablex',$this->id_table);
+
+		
 
         return view('livewire.modelos.view', [
             'modelos' => Modelo::latest()
@@ -48,7 +51,7 @@ class Modelos extends Component
 						->orWhere('img3', 'LIKE', $keyWord)
 						->orWhere('status', 'LIKE', $keyWord)
 						->orWhere('studio_id', 'LIKE', $keyWord)
-						->paginate(5),
+						->paginate(50),
         ]);
     }
 	
@@ -105,8 +108,9 @@ class Modelos extends Component
 
     public function edit($id)
     {
+		//dd('id : '.$id);
         $record = Modelo::findOrFail($id);
-
+		$this->seleccion_col = $id;
         $this->selected_id = $id; 
 		$this->name = $record-> name;
 		$this->nick = $record-> nick;

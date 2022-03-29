@@ -30,6 +30,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route Hooks - Do not delete//
+	Route::view('trafic1s', 'livewire.trafic1s.index')->middleware('auth');
+	Route::view('trafic1', 'livewire.trafic1.index')->middleware('auth');
+	Route::view('botrooms', 'livewire.botrooms.index')->middleware('auth');
+	Route::view('monedas', 'livewire.monedas.index')->middleware('auth');
 	Route::view('paystudios', 'livewire.paystudios.index')->middleware('auth');
 	Route::view('adm/invoicepaystudios', 'livewire.invoicepaystudios.index')->middleware('auth')->name('invoicepaystudios');
 	Route::view('adm/contable-studios', 'livewire.contablestudios.index')->middleware('auth')->name('contablestudios');

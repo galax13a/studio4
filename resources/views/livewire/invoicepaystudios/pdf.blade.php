@@ -37,7 +37,7 @@
                         <td>
                             <b>Pagar a nombre de </b>  <br>
                             {{ $this->obj_factura["empresa"]["name"]}} <br />
-                            cc : {{ $this->obj_factura["empresa"]["data1"]}}<br />
+                             {{ $this->obj_factura["empresa"]["data1"]}}<br />
                             Celular : {{ $this->obj_factura["empresa"]["tel"]}} <br>
                             Dir : Carrera 30 #86-13
                         </td>
@@ -69,8 +69,8 @@
              
              La Suma de {{$this->obj_factura["payout"]}} / {{$this->formato_moneda}}
             </td>
-            <td>1.000</td>
-            <td>{{$this->obj_factura["payout"]}} USD
+            <td>{{$this->obj_factura["payout"]}}</td>
+            <td>{{$this->obj_factura["payout"]}} 
 
         <tr class="heading">
             <td>Descripcion</td>

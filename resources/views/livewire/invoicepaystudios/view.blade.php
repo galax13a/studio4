@@ -58,7 +58,7 @@
 							
 								$data_medios  = App\Models\Paymediosdetail::find($row["paystudio"]["medio_id"]);
 							 	@endphp
-						
+					
 								</td> 
 								<td>{{ $row->monetizadore->name}}/{{$row->monetizadore->nit }}</td>
 								<td>{{ $row->name }} / {{ $row->paystudio->program }}</td>
@@ -94,6 +94,8 @@
 								<td>{{ $row->contable->name }}</td>
 								<td>{{ $row->moneda->name }}/
 									{{ $row->paystudio_id }} 
+
+									moneda/
 								</td>
 							
 								<td>{{ $row->estudio->name }}</td>

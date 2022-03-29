@@ -14,7 +14,19 @@
 				<div class="card-body">
 						@include('livewire.modelos.create')
 						@include('livewire.modelos.update')
-					
+						<div style="p-2 m-2">
+							Toggle column: <a style="cursor:pointer;" class="mb-4" data-column="1">Name</a> -
+							 <a class="toggle-vis" data-column="2">Nick</a> - <a class="toggle-vis" data-column="3">Email</a> 
+							 - <a class="toggle-vis" data-column="4">DNI</a> - <a class="toggle-vis" data-column="6">Porce</a> 
+							 - <a class="toggle-vis" data-column="5">Wsp</a>
+							 - <a class="toggle-vis" data-column="7">Typomodel</a>
+							 - <a class="toggle-vis" data-column="8">Img</a>
+							 - <a class="toggle-vis" data-column="9">Status</a>
+							 - <a class="toggle-vis" data-column="10">Studio</a>
+							 - <a class="toggle-vis" data-column="11">Data</a>
+						
+						</div>
+
 				<div class="table-responsive">
 					<table id="{{$this->id_table }}" class="table table-sm">
 						<thead class="thead">
@@ -173,19 +185,39 @@ $("{{$this->id_table }}").DataTable({
 		 */
  document.addEventListener('livewire:load', function() {
 
+	var uptnow = document.getElementById('uptnow')
+						uptnow.addEventListener('click', actualiza)
+
+						function actualiza(){
+							alert('Actualiza')
+						}
+
 			$(document).ready(function() {
 						//alert('cargado')
-						$("#{{$this->id_table }}").DataTable({
+
+						
+						var table = $("#{{$this->id_table }}").DataTable({
 								paging: false,
 								searching: true,
 								retrieve: true,
-								responsive:true,
+								responsive:false,
 								autoWidth:false, 
 								dom: 'Bfrtip',
 								buttons: [
 									'copy', 'csv', 'excel', 'pdf', 'print'
 								]
 							});
+
+							$('a.toggle-vis').on( 'click', function (e) {
+									e.preventDefault();
+							
+									// Get the column API object
+									var column = table.column( $(this).attr('data-column') );
+							
+									// Toggle the visibility
+									column.visible( ! column.visible() );
+								} );
+							
 		});
 		
 

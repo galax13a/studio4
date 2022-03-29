@@ -13,8 +13,16 @@ class Moneda extends Model
 
     protected $table = 'monedas';
 
-    protected $fillable = ['name','status'];
+    protected $fillable = ['name','code','datax','status'];
 	
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function invoicepaystudios()
+    {
+        return $this->hasMany('App\Models\Invoicepaystudio', 'moneda_id', 'id');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -26,15 +34,25 @@ class Moneda extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function pages()
+    {
+        return $this->hasMany('App\Models\Page', 'moneda_id', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function paymedios()
+    {
+        return $this->hasMany('App\Models\Paymedio', 'moneda_id', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function paypages()
     {
         return $this->hasMany('App\Models\Paypage', 'moneda_id', 'id');
     }
-
-    public function monedanax()
-    {
-        return $this->hasMany('App\Models\Page', 'moneda_id', 'id');
-    }
-
     
 }

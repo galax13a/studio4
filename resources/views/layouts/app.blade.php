@@ -48,6 +48,12 @@
                     <ul class="navbar-nav mr-auto">
 						<!--Nav Bar Hooks - Do not delete!!-->
 						<li class="nav-item">
+                            <a href="{{ url('/trafic1s') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Trafic1s</a> 
+                        </li>
+						<li class="nav-item">
+                            <a href="{{ url('/monedas') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Monedas</a> 
+                        </li>
+						<li class="nav-item">
                             <a href="{{ url('/paystudios') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Paystudios</a> 
                         </li>
 						<li class="nav-item">
@@ -149,13 +155,20 @@ document.addEventListener('livewire:load', function() {
         $("#"+res).DataTable().destroy();
     });
 
+    
 	 window.livewire.on('tablex', (res) => {
+
+       
            $("#"+res).DataTable({
 								paging: false,
 								searching: true,
 								retrieve: true,
 								responsive:true,
-								autoWidth:false
+								autoWidth:false,
+                                dom: 'Bfrtip',
+								buttons: [
+									'copy', 'csv', 'excel', 'pdf', 'print'
+								]
 							});
            
         });

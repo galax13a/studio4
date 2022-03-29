@@ -2,21 +2,22 @@
 
 namespace Database\Factories;
 
-use App\Models\Moneda;
+use App\Models\Botroom;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class MonedaFactory extends Factory
+class BotroomFactory extends Factory
 {
-    protected $model = Moneda::class;
+    protected $model = Botroom::class;
 
     public function definition()
     {
         return [
-			'name' => $this->faker->name,
-			'code' => $this->faker->name,
+			'url' => $this->faker->name,
 			'datax' => $this->faker->name,
 			'status' => $this->faker->name,
+			'page_id' => $this->faker->name,
+			'tiposala' => $this->faker->name,
         ];
     }
 }

@@ -1,5 +1,6 @@
 <div>
     <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
+    <div wire:poll.60s>
     <a  class="btn-dolar p-2 text-capitalize shadow-sm">
       
              @foreach ($dolar as $dola)
@@ -7,6 +8,7 @@
             @endforeach 
         
       </a>
+    </div>
 </div>
 <style>
   

@@ -4,26 +4,22 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\Moneda;
+use App\Models\Trafic1;
 
-class Monedas extends Component
+class Trafic1s extends Component
 {
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $name, $code, $datax, $status;
+    public $selected_id, $keyWord, $url, $pagui, $datax, $status, $page_id, $tiposala;
     public $updateMode = false;
 
     public function render()
     {
 		$keyWord = '%'.$this->keyWord .'%';
-        return view('livewire.monedas.view', [
-            'monedas' => Moneda::latest()
-						->orWhere('name', 'LIKE', $keyWord)
-						->orWhere('code', 'LIKE', $keyWord)
-						->orWhere('datax', 'LIKE', $keyWord)
-						->orWhere('status', 'LIKE', $keyWord)
-						->paginate(10),
+        return view('livewire.trafic1s.view', [
+            'trafic1s' => Trafic1::latest()
+						->paginate(100),
         ]);
     }
 	
@@ -35,40 +31,45 @@ class Monedas extends Component
 	
     private function resetInput()
     {		
-		$this->name = null;
-		$this->code = null;
+		$this->url = null;
+		$this->pagui = null;
 		$this->datax = null;
 		$this->status = null;
+		$this->page_id = null;
+		$this->tiposala = null;
     }
 
     public function store()
     {
         $this->validate([
-		'name' => 'required',
-		'status' => 'required',
+		'url' => 'required',
         ]);
 
-        Moneda::create([ 
-			'name' => $this-> name,
-			'code' => $this-> code,
+        Trafic1::create([ 
+			'url' => $this-> url,
+			'pagui' => $this-> pagui,
 			'datax' => $this-> datax,
-			'status' => $this-> status
+			'status' => $this-> status,
+			'page_id' => $this-> page_id,
+			'tiposala' => $this-> tiposala
         ]);
         
         $this->resetInput();
 		$this->emit('closeModal');
-		session()->flash('message', 'Moneda Successfully created.');
+		session()->flash('message', 'Trafic1 Successfully created.');
     }
 
     public function edit($id)
     {
-        $record = Moneda::findOrFail($id);
+        $record = Trafic1::findOrFail($id);
 
         $this->selected_id = $id; 
-		$this->name = $record-> name;
-		$this->code = $record-> code;
+		$this->url = $record-> url;
+		$this->pagui = $record-> pagui;
 		$this->datax = $record-> datax;
 		$this->status = $record-> status;
+		$this->page_id = $record-> page_id;
+		$this->tiposala = $record-> tiposala;
 		
         $this->updateMode = true;
     }
@@ -76,29 +77,30 @@ class Monedas extends Component
     public function update()
     {
         $this->validate([
-		'name' => 'required',
-		'status' => 'required',
+		'url' => 'required',
         ]);
 
         if ($this->selected_id) {
-			$record = Moneda::find($this->selected_id);
+			$record = Trafic1::find($this->selected_id);
             $record->update([ 
-			'name' => $this-> name,
-			'code' => $this-> code,
+			'url' => $this-> url,
+			'pagui' => $this-> pagui,
 			'datax' => $this-> datax,
-			'status' => $this-> status
+			'status' => $this-> status,
+			'page_id' => $this-> page_id,
+			'tiposala' => $this-> tiposala
             ]);
 
             $this->resetInput();
             $this->updateMode = false;
-			session()->flash('message', 'Moneda Successfully updated.');
+			session()->flash('message', 'Trafic1 Successfully updated.');
         }
     }
 
     public function destroy($id)
     {
         if ($id) {
-            $record = Moneda::where('id', $id);
+            $record = Trafic1::where('id', $id);
             $record->delete();
         }
     }
