@@ -147,10 +147,15 @@ document.addEventListener('livewire:load', function() {
                 contador = contador+1
 				con_global = contador
 				page = link
+
+				// abre las salas 
+				/*
 				var mywin = window.open(page, '_blank');
 					setTimeout(function() {
 					mywin.close();
 					}, close_win);
+					*/
+				
             }
         }
 

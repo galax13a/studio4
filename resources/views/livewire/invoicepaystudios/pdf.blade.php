@@ -70,7 +70,7 @@
              La Suma de {{$this->obj_factura["payout"]}} / {{$this->formato_moneda}}
             </td>
             <td>{{$this->obj_factura["payout"]}}</td>
-            <td>{{$this->obj_factura["payout"]}} 
+            <td>USD
 
         <tr class="heading">
             <td>Descripcion</td>

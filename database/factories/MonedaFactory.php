@@ -13,10 +13,10 @@ class MonedaFactory extends Factory
     public function definition()
     {
         return [
-			'name' => $this->faker->name,
-			'code' => $this->faker->name,
-			'datax' => $this->faker->name,
-			'status' => $this->faker->name,
+			'name' => $this->faker->randomElement(["COP","USD","TKS"]),
+			'code' => "USD",
+			'datax' => null,
+			'status' => 1
         ];
     }
 }

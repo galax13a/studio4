@@ -35,7 +35,7 @@ class Invoicepaystudios extends Component
 		$this->obj_factura["medios"] =  $medios;
 		//dd($this->obj_factura["name"]);
 		//	dd($this->obj_factura["empresa"]["name"]);
-	    dd($this->obj_factura);
+	    //dd($this->obj_factura);
 		$vary =  new NumeroALetras();
 		$this->formato_moneda = $vary->toMoney($this->obj_factura["payout"], 0, 'DÓLARES', 'CENTAVOS');
 

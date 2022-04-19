@@ -18,7 +18,7 @@ class PageFactory extends Factory
     {
         return [
 			'name' => Pagemaster::all()->random()->name,
-			'monedax' => 'tks',
+			'monedax' => null,
 			'value' => 60,
 			'link' => $this->faker->url,
 			'status' => 1,
