@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
          \App\Models\Pagemaster::factory(3)->create();
          \App\Models\Page::factory(3)->create();
          \App\Models\Paymedio::factory(3)->create();
-         \App\models\Modelo::factory(6)->create();
+       //  \App\models\Modelo::factory(6)->create();
          \App\Models\Monetizadore::factory(2)->create();
 
          \App\Models\Contable::factory(3)->create();
