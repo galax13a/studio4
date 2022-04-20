@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
    
          \App\Models\Paystudio::factory(1)->create();
    
-         \App\Models\invoicepaystudio::factory(1)->create();
+         \App\Models\Invoicepaystudio::factory(1)->create();
          
        
      
