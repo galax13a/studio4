@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<x-menuadmin.studio></x-menuadmin.studio>
+<x-Menuadmin.studio></x-Menuadmin.studio>
 
 <x-menuxnav>
     <x-slot name="menu">
