@@ -91,7 +91,7 @@
     </table>
 </div>
 @else 
-<b>esperando factu</b>
+<b>esperando factura</b>
 @endif
 <style>
     .invoice-box {
