@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<x-menuadmin.empresa></x-menuadmin.empresa>
+<x-Menuadmin.empresa></x-Menuadmin.empresa>
 
 <div class="container-fluid">
     <div class="row justify-content-center">
