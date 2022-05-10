@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
-        "axios": "^0.25",
+        "axios": "^0.25.0",
         "bootstrap": "^4.6.1",
         "cross-env": "^7.0",
         "jquery": "^3.6.0",
@@ -22,5 +22,9 @@
         "sass": "^1.29.0",
         "sass-loader": "^8.0.2",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "mysql": "^2.18.1"
     }
 }
