@@ -4,7 +4,7 @@ const axios = require('axios')
     //const database = require('./sqlConnection');
 let time = 5000;
 let url_dolar = 'https://api.cam4studio.com/dolar';
-let url_api = 'http://127.0.0.1:8000/dolarcity';
+let url_api = 'https://cam4studio.com/dolarcity';
 setTimeout(get_msg, time);
 
 async function carga() {
