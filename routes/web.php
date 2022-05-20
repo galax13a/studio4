@@ -21,13 +21,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::match(['POST'], '/dolarcity', [App\Http\Controllers\dolarcity::class, 'index']);
 Route::view('dolars', 'livewire.dolars.index')->middleware('auth');
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route Hooks - Do not delete//
 	Route::view('trafic1s', 'livewire.trafic1s.index')->middleware('auth');
@@ -55,5 +51,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 	Route::view('adm/studios', 'livewire.estudios.index')->middleware('auth')->name('estudios');
 	Route::view('adm/studio-models', 'livewire.modelos.index')->middleware('auth')->name('modelos');
 	Route::view('adm/cams-pages', 'livewire.pages.index')->middleware('auth')->name('pages-cams');
-    Route::view('adm/dolars-colombia', 'livewire.dolars.index')->middleware('auth')->name('dolars');
+    Route::view('adm/dolar-colombia', 'livewire.dolars.index')->middleware('auth')->name('dolars');
 	Route::get('test', 'App\Http\Controllers\TestController@index');
