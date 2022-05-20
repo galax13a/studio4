@@ -1,8 +1,8 @@
 //console.log("app serve Cam4dolar");
-console.log('====================================');
+console.log('=========Cam4Script Dolar=================');
 const axios = require('axios')
     //const database = require('./sqlConnection');
-let time = 5000;
+let time = 360000;
 let url_dolar = 'https://api.cam4studio.com/dolar';
 let url_api = 'https://cam4studio.com/dolarcity';
 setTimeout(get_msg, time);
@@ -87,6 +87,7 @@ const getydolar = async() => {
             key: 'kasndjknsdf654sdf4sdf5sdf5s65x55df5hu5yui5u5i5ui5us5s52f26gh52ghjhg5j5hgj5hgjg33211xxfg44644535355f5g5b5v2v2v22d2d22dd2d2cxxzz7'
         }
     }).then((res) => {
+        console.clear();
         console.log("Exe TRM")
     })
 
@@ -103,6 +104,8 @@ const getydolar = async() => {
     });
     */
 
-
-
+    console.clear();
+    console.log("****Finished cam4Dolarjs**** " + await get_hr())
+        //console.log("*********** SLEEP ***** APP ******** WAITING ********** \n " + await get_hr())
+    process.exit();
 }
