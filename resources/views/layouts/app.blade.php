@@ -48,13 +48,13 @@
                     <ul class="navbar-nav mr-auto">
 						<!--Nav Bar Hooks - Do not delete!!-->
 						<li class="nav-item">
-                            <a href="{{ url('/trafic1s') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Trafic1s</a> 
+                            <a href="{{ url('/trafic1s') }}" class="nav-link"><i class="  text-info"></i> Trafic</a> 
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('/monedas') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Monedas</a> 
+                            <a href="{{ url('/monedas') }}" class="nav-link"><i class="  text-info"></i> Money</a> 
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('/paystudios') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Paystudios</a> 
+                            <a href="{{ url('/paystudios') }}" class="nav-link"><i class=" text-info"></i> Paystudios</a> 
                         </li>
 						<li class="nav-item">
                             <a href="{{ route('apichatur') }}" class="nav-link"><i class="fab fa- text-info"></i> 🍬Apicams</a> 
@@ -68,13 +68,11 @@
 						<li class="nav-item">
                             <a href="{{ route('business') }}" class="nav-link"><i class="fab fa- text-info"></i>Empresas</a> 
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('dolars') }}" class="nav-link"><i class="fab fa- text-info"></i> Dolars</a> 
-                        </li>
+                     
                     </ul>
                     
                     <x-Dolarwiget>
-                        <x-slot name="title">Dolar Hoy</x-slot>
+                        <x-slot name="title">Dolar</x-slot>
                     </x-Dolarwiget>
 					@endauth()
 					

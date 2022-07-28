@@ -22,7 +22,7 @@
 								<th class="text-center"> 📣 HOY {{$this->fecha}} ::: TRM ::: COP ::::</th>
 								<th class="text-center">Trm / Mañana</th>
 								<th class="text-center">Date</th>
-								<td>ACTIONS</td>
+							
 							</tr>
 						</thead>
 						<tbody>
@@ -32,11 +32,7 @@
 								<td class="text-center">🤑 <strong> <span class="badge badge-success p-2"> {{ number_format($row->trm, 0) }} </span>  Peso Colombiano</strong></td>
 								<td class="bg-dark color-dark text-center font-weight-bold font-italic text-capitalize "> <strong> {{ $row->trm2 }} </strong></td>
 								<td class="text-center" >{{ $row->date }}</td>
-								<td width="90">
-									<x-BtnActions>
-										<x-slot name="id_row">{{$row->id}}</x-slot>
-									 </x-BtnActions>
-								</td>
+							
 							@endforeach
 						</tbody>
 					</table>						

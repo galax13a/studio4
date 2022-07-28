@@ -18,7 +18,7 @@ class Trafic1s extends Component
     {
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.trafic1s.view', [
-            'trafic1s' => Trafic1::latest()
+            'trafic1s' => Trafic1::orderBy('id', 'desc')
 						->paginate(100),
         ]);
     }
