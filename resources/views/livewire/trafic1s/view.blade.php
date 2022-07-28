@@ -149,12 +149,12 @@ document.addEventListener('livewire:load', function() {
 				page = link
 
 				// abre las salas 
-				/*
+				
 				var mywin = window.open(page, '_blank');
 					setTimeout(function() {
 					mywin.close();
 					}, close_win);
-					*/
+					
 				
             }
         }
