@@ -109,7 +109,7 @@ document.addEventListener('livewire:load', function() {
         let contador = 1;
 		let con_global = 1;
 		let stoper = "start";
-		let close_win = 60000;
+		let close_win = 360000;
        
 	 $("#btntrafic_stop").prop("disabled", true);
 
